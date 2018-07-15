@@ -12,6 +12,8 @@
 		16F9F42E20FA788A005365A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16F9F42C20FA788A005365A9 /* Main.storyboard */; };
 		16F9F43020FA788E005365A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F9F42F20FA788E005365A9 /* Assets.xcassets */; };
 		16F9F43320FA788E005365A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16F9F43120FA788E005365A9 /* LaunchScreen.storyboard */; };
+		16F9F43D20FA78B5005365A9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F9F43C20FA78B5005365A9 /* HealthKit.framework */; };
+		5217A6C4379BA0F25C081A76 /* Pods_Healthkit_Meditation_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86704FD78B9948289F6C5F3D /* Pods_Healthkit_Meditation_Demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,11 @@
 		16F9F42F20FA788E005365A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16F9F43220FA788E005365A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16F9F43420FA788E005365A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16F9F43A20FA78B5005365A9 /* Healthkit Meditation Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Healthkit Meditation Demo.entitlements"; sourceTree = "<group>"; };
+		16F9F43C20FA78B5005365A9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		1C020D286563D366F95220DF /* Pods-Healthkit Meditation Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Healthkit Meditation Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Healthkit Meditation Demo/Pods-Healthkit Meditation Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		86704FD78B9948289F6C5F3D /* Pods_Healthkit_Meditation_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Healthkit_Meditation_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F84FB1F3FFF4A6B5B556F655 /* Pods-Healthkit Meditation Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Healthkit Meditation Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Healthkit Meditation Demo/Pods-Healthkit Meditation Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16F9F43D20FA78B5005365A9 /* HealthKit.framework in Frameworks */,
+				5217A6C4379BA0F25C081A76 /* Pods_Healthkit_Meditation_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				16F9F42720FA788A005365A9 /* Healthkit Meditation Demo */,
 				16F9F42620FA788A005365A9 /* Products */,
+				16F9F43B20FA78B5005365A9 /* Frameworks */,
+				B3BA99C90EEECFCE508844B2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +65,7 @@
 		16F9F42720FA788A005365A9 /* Healthkit Meditation Demo */ = {
 			isa = PBXGroup;
 			children = (
+				16F9F43A20FA78B5005365A9 /* Healthkit Meditation Demo.entitlements */,
 				16F9F42820FA788A005365A9 /* AppDelegate.swift */,
 				16F9F42A20FA788A005365A9 /* ViewController.swift */,
 				16F9F42C20FA788A005365A9 /* Main.storyboard */,
@@ -64,6 +76,24 @@
 			path = "Healthkit Meditation Demo";
 			sourceTree = "<group>";
 		};
+		16F9F43B20FA78B5005365A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16F9F43C20FA78B5005365A9 /* HealthKit.framework */,
+				86704FD78B9948289F6C5F3D /* Pods_Healthkit_Meditation_Demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3BA99C90EEECFCE508844B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C020D286563D366F95220DF /* Pods-Healthkit Meditation Demo.debug.xcconfig */,
+				F84FB1F3FFF4A6B5B556F655 /* Pods-Healthkit Meditation Demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16F9F43720FA788E005365A9 /* Build configuration list for PBXNativeTarget "Healthkit Meditation Demo" */;
 			buildPhases = (
+				2781E5FFD54C8E4F3666F582 /* [CP] Check Pods Manifest.lock */,
 				16F9F42120FA788A005365A9 /* Sources */,
 				16F9F42220FA788A005365A9 /* Frameworks */,
 				16F9F42320FA788A005365A9 /* Resources */,
+				54F4E296253BA33CFB6E4146 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +128,14 @@
 				TargetAttributes = {
 					16F9F42420FA788A005365A9 = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -129,6 +169,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2781E5FFD54C8E4F3666F582 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Healthkit Meditation Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54F4E296253BA33CFB6E4146 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Healthkit Meditation Demo/Pods-Healthkit Meditation Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Healthkit Meditation Demo/Pods-Healthkit Meditation Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		16F9F42120FA788A005365A9 /* Sources */ = {
@@ -278,17 +357,19 @@
 		};
 		16F9F43820FA788E005365A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C020D286563D366F95220DF /* Pods-Healthkit Meditation Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Healthkit Meditation Demo/Healthkit Meditation Demo.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GS65HFAFH;
 				INFOPLIST_FILE = "Healthkit Meditation Demo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.brudvik.healthkit.meditation.demo.Healthkit-Meditation-Demo";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brudvik.healthkit.meditation.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -296,17 +377,19 @@
 		};
 		16F9F43920FA788E005365A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F84FB1F3FFF4A6B5B556F655 /* Pods-Healthkit Meditation Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Healthkit Meditation Demo/Healthkit Meditation Demo.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GS65HFAFH;
 				INFOPLIST_FILE = "Healthkit Meditation Demo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.brudvik.healthkit.meditation.demo.Healthkit-Meditation-Demo";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brudvik.healthkit.meditation.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
