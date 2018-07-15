@@ -7,19 +7,40 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
 
+    lazy var box = UIView()
+    
+    var mainView: UIView {
+        let view = UIView()
+        view.backgroundColor = .gray
+        view.layer.cornerRadius = 20
+        return view
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        
+        
+            setup()
+        
+//        box.backgroundColor = .red
+//        self.view.addSubview(box)
+//
+//        box.snp.makeConstraints { (make) -> Void in
+//            make.edges.equalTo(self.view)
+//        }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
-
+    
+    func setup() {
+        view.backgroundColor = .white
+        title = "Meditation Timer"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
 
 }
 

@@ -11,7 +11,6 @@
 		16F9F42B20FA788A005365A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F9F42A20FA788A005365A9 /* ViewController.swift */; };
 		16F9F42E20FA788A005365A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16F9F42C20FA788A005365A9 /* Main.storyboard */; };
 		16F9F43020FA788E005365A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F9F42F20FA788E005365A9 /* Assets.xcassets */; };
-		16F9F43320FA788E005365A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16F9F43120FA788E005365A9 /* LaunchScreen.storyboard */; };
 		16F9F43D20FA78B5005365A9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F9F43C20FA78B5005365A9 /* HealthKit.framework */; };
 		5217A6C4379BA0F25C081A76 /* Pods_Healthkit_Meditation_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86704FD78B9948289F6C5F3D /* Pods_Healthkit_Meditation_Demo.framework */; };
 /* End PBXBuildFile section */
@@ -22,7 +21,6 @@
 		16F9F42A20FA788A005365A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		16F9F42D20FA788A005365A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16F9F42F20FA788E005365A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		16F9F43220FA788E005365A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16F9F43420FA788E005365A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16F9F43A20FA78B5005365A9 /* Healthkit Meditation Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Healthkit Meditation Demo.entitlements"; sourceTree = "<group>"; };
 		16F9F43C20FA78B5005365A9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -70,7 +68,6 @@
 				16F9F42A20FA788A005365A9 /* ViewController.swift */,
 				16F9F42C20FA788A005365A9 /* Main.storyboard */,
 				16F9F42F20FA788E005365A9 /* Assets.xcassets */,
-				16F9F43120FA788E005365A9 /* LaunchScreen.storyboard */,
 				16F9F43420FA788E005365A9 /* Info.plist */,
 			);
 			path = "Healthkit Meditation Demo";
@@ -162,7 +159,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16F9F43320FA788E005365A9 /* LaunchScreen.storyboard in Resources */,
 				16F9F43020FA788E005365A9 /* Assets.xcassets in Resources */,
 				16F9F42E20FA788A005365A9 /* Main.storyboard in Resources */,
 			);
@@ -196,10 +192,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Healthkit Meditation Demo/Pods-Healthkit Meditation Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,14 +226,6 @@
 				16F9F42D20FA788A005365A9 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		16F9F43120FA788E005365A9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				16F9F43220FA788E005365A9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -365,7 +355,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GS65HFAFH;
 				INFOPLIST_FILE = "Healthkit Meditation Demo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.brudvik.healthkit.meditation.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -385,7 +378,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GS65HFAFH;
 				INFOPLIST_FILE = "Healthkit Meditation Demo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.brudvik.healthkit.meditation.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

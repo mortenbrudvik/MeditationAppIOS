@@ -1,16 +1,20 @@
 PODS:
+  - SnapKit (4.0.0)
   - TinyConstraints (3.1.0)
 
 DEPENDENCIES:
+  - SnapKit (~> 4.0.0)
   - TinyConstraints
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
+    - SnapKit
     - TinyConstraints
 
 SPEC CHECKSUMS:
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   TinyConstraints: 4721a4b303c799328867078ade6560e152df54d1
 
-PODFILE CHECKSUM: 2e480a28fa3f0081dd5eb845d79d7e5fb0e921f6
+PODFILE CHECKSUM: adda134af359dae18dee1a51bce22d325c37bacd
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

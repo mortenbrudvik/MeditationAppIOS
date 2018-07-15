@@ -7,5 +7,6 @@ target 'Healthkit Meditation Demo' do
 
   # Pods for Healthkit Meditation Demo
     pod "TinyConstraints"
+    pod 'SnapKit', '~> 4.0.0'
 
 end
