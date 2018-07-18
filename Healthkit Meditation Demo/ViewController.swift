@@ -10,9 +10,16 @@ import UIKit
 import AVFoundation
 import SnapKit
 
+enum timerState {
+    case notStarted, running, paused, completed
+}
+
 class ViewController: UIViewController {
     
     var minutes: [Int] = []
+    var timer: Timer! = nil
+    var timerState: timerState = .notStarted
+    var seconds = 0
     
     var mainView: UIView = {
         let view = UIView()
@@ -37,6 +44,36 @@ class ViewController: UIViewController {
         return label
     }()
     
+    let startButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 10
+        button.clipsToBounds = true
+        button.backgroundColor = .flatMintDark
+        button.setTitle("Start", for: .normal)
+        button.contentEdgeInsets = UIEdgeInsetsMake(7,22,7,22)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        button.titleLabel?.textColor = .flatWhite
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func buttonAction(_ sender: UIButton) {
+        print("current state: ")
+        
+        switch self.timerState {
+        case .notStarted:
+            startCountdown()
+            self.timerState = .running
+            break
+        case .running:
+            break
+        case .paused:
+            break
+        case .completed:
+            break
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +128,13 @@ class ViewController: UIViewController {
             make.centerX.equalTo(self.mainView)
             make.centerY.equalTo(self.mainView).offset(20)
         }
+        
+        // Start, Pause, Continue Button
+        mainView.addSubview(startButton)
+        startButton.snp.makeConstraints {(make) in
+            make.centerX.equalTo(self.mainView)
+            make.bottom.equalTo(self.mainView.snp.bottom).offset(-110)
+        }
     }
     
 
@@ -109,6 +153,51 @@ class ViewController: UIViewController {
         let minutes =  Int(time) != (60*60) ? Int(time) / 60 % 60 : 60
         let seconds = Int(time) % 60
         return String(format: "%02d:%02d", minutes, seconds)
+    }
+}
+
+
+// MARK: Meditation Timer
+
+extension ViewController: CountDownClock {
+
+    func startCountdown() {
+        print("start")
+        
+        runTimer()
+    }
+    
+    func pause() {
+        print("pause")
+    }
+    
+    func unPause() {
+        print("unpause")
+    }
+    
+    func triggerAlarm() {
+        print("trigger alarm")
+    }
+  
+    func reset() {
+        print("reset")
+    }
+
+    
+    
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimer() {
+        if seconds < 1 {
+            triggerAlarm()
+        } else {
+            seconds -= 1
+            
+            self.countDownLabel.text = "\(self.timeString(seconds: seconds))"
+        }
+        print(seconds)
     }
 }
 
