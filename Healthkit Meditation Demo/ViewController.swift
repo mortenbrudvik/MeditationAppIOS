@@ -75,22 +75,25 @@ class ViewController: UIViewController {
             make.bottom.equalTo(self.headerView).offset(-10)
         }
         
-        // Count Down Timer Label View
-        
-        mainView.addSubview(countDownLabel)
-        countDownLabel.snp.makeConstraints{(make) in
-            make.center.equalTo(self.mainView)
-        }
-
         // Time Picker View
         minutesSelectionView.dataSource = self
         minutesSelectionView.delegate = self
         mainView.addSubview(minutesSelectionView)
         minutesSelectionView.snp.makeConstraints {(make) in
-            make.bottom.equalTo(self.countDownLabel.snp.top).offset(-40)
+            make.top.equalTo(self.headerView.snp.bottom).offset(20)
             make.right.left.equalTo(mainView)
         }
+        
+        // Count Down Timer Label View
+        mainView.addSubview(countDownLabel)
+        countDownLabel.snp.makeConstraints{(make) in
+            make.top.greaterThanOrEqualTo(self.minutesSelectionView.snp.bottom).offset(20)
+            make.centerX.equalTo(self.mainView)
+            make.centerY.equalTo(self.mainView).offset(20)
+        }
     }
+    
+
     
     // MARK: Helper Methods
     
