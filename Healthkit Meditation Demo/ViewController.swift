@@ -11,15 +11,15 @@ import AVFoundation
 import SnapKit
 
 enum timerState {
-    case notStarted, running, paused, completed
+    case notRunning, running, paused
 }
 
 class ViewController: UIViewController {
     
     var minutes: [Int] = []
     var timer: Timer! = nil
-    var timerState: timerState = .notStarted
-    var seconds = 0
+    var timerState: timerState = .notRunning
+    var countdownInSeconds = 0
     
     var mainView: UIView = {
         let view = UIView()
@@ -33,7 +33,15 @@ class ViewController: UIViewController {
         return view
     }()
     
-    let minutesSelectionView: UIPickerView = UIPickerView()
+    let meditationTimePicker: UIPickerView = UIPickerView()
+    
+    var meditationTimeInMinutes: Int {
+        return meditationTimePicker.selectedRow(inComponent: 0) + 1
+    }
+    
+    var meditationTimeInSeconds: Int {
+        return meditationTimeInMinutes * 60
+    }
     
     let countDownLabel: UILabel = {
         let label = UILabel()
@@ -56,24 +64,6 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button
     }()
-    
-    @objc func buttonAction(_ sender: UIButton) {
-        print("current state: ")
-        
-        switch self.timerState {
-        case .notStarted:
-            startCountdown()
-            self.timerState = .running
-            break
-        case .running:
-            break
-        case .paused:
-            break
-        case .completed:
-            break
-        }
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,10 +103,10 @@ class ViewController: UIViewController {
         }
         
         // Time Picker View
-        minutesSelectionView.dataSource = self
-        minutesSelectionView.delegate = self
-        mainView.addSubview(minutesSelectionView)
-        minutesSelectionView.snp.makeConstraints {(make) in
+        meditationTimePicker.dataSource = self
+        meditationTimePicker.delegate = self
+        mainView.addSubview(meditationTimePicker)
+        meditationTimePicker.snp.makeConstraints {(make) in
             make.top.equalTo(self.headerView.snp.bottom).offset(20)
             make.right.left.equalTo(mainView)
         }
@@ -124,7 +114,7 @@ class ViewController: UIViewController {
         // Count Down Timer Label View
         mainView.addSubview(countDownLabel)
         countDownLabel.snp.makeConstraints{(make) in
-            make.top.greaterThanOrEqualTo(self.minutesSelectionView.snp.bottom).offset(20)
+            make.top.greaterThanOrEqualTo(self.meditationTimePicker.snp.bottom).offset(20)
             make.centerX.equalTo(self.mainView)
             make.centerY.equalTo(self.mainView).offset(20)
         }
@@ -161,43 +151,82 @@ class ViewController: UIViewController {
 
 extension ViewController: CountDownClock {
 
-    func startCountdown() {
-        print("start")
+    @objc func buttonAction(_ sender: UIButton) {
+        print("Meditation timer button clicked")
         
-        runTimer()
+        switch self.timerState {
+        case .notRunning:
+            startCountdown()
+            break
+        case .running:
+            pause()
+            break
+        case .paused:
+            unPause()
+            break
+        }
+    }
+    
+    func startCountdown() {
+        print("start Countdown")
+        timerState = .running
+        countdownInSeconds = meditationTimeInSeconds
+        startButton.setTitle("Pause", for: .normal)
+        startTimer()
     }
     
     func pause() {
         print("pause")
+        timerState = .paused
+        stopTimer()
+        startButton.setTitle("Continue", for: .normal)
     }
     
     func unPause() {
         print("unpause")
+        timerState = .running
+        startTimer()
+        startButton.setTitle("Pause", for: .normal)
     }
     
     func triggerAlarm() {
         print("trigger alarm")
+        
+        timerState = .notRunning
+        stopTimer()
+        startButton.setTitle("Start", for: .normal)
+        countDownLabel.text = "\(self.timeString(minutes: meditationTimeInMinutes))"
+        playSound()
     }
   
     func reset() {
         print("reset")
     }
 
-    
-    
-    func runTimer() {
+    func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
     }
     
+    func stopTimer() {
+        if timer != nil {
+            timer.invalidate()
+            timer = nil
+        }
+    }
+    
     @objc func updateTimer() {
-        if seconds < 1 {
+        if countdownInSeconds < 1 {
             triggerAlarm()
         } else {
-            seconds -= 1
+            countdownInSeconds -= 1
             
-            self.countDownLabel.text = "\(self.timeString(seconds: seconds))"
+            self.countDownLabel.text = "\(self.timeString(seconds: countdownInSeconds))"
         }
-        print(seconds)
+        print(countdownInSeconds)
+    }
+    
+    func playSound() {
+        AudioServicesPlaySystemSound(1005)
     }
 }
 
