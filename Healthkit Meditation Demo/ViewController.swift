@@ -172,6 +172,7 @@ extension ViewController: CountDownClock {
         timerState = .running
         countdownInSeconds = meditationTimeInSeconds
         startButton.setTitle("Pause", for: .normal)
+        meditationTimePicker.isHidden = true
         startTimer()
     }
     
@@ -195,6 +196,7 @@ extension ViewController: CountDownClock {
         timerState = .notRunning
         stopTimer()
         startButton.setTitle("Start", for: .normal)
+        meditationTimePicker.isHidden = false
         countDownLabel.text = "\(self.timeString(minutes: meditationTimeInMinutes))"
         playSound()
     }
