@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     var timerState: timerState = .notRunning
     var countdownInSeconds = 0
     
+    let meditationHealthKit = MeditationHealthKit()
+    
     var mainView: UIView = {
         let view = UIView()
         view.backgroundColor = .flatWhite
@@ -72,6 +74,8 @@ class ViewController: UIViewController {
         
         setup()
         setupViews()
+        
+        meditationHealthKit.authorize()
     }
     
     func setup() {

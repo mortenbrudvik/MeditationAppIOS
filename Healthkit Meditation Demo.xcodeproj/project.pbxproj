@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1600E212211740CD00537281 /* MeditationHealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600E211211740CD00537281 /* MeditationHealthKit.swift */; };
 		1675BFE220FF6242004525A7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675BFE120FF6242004525A7 /* UIColorExtension.swift */; };
 		16F9F42920FA788A005365A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F9F42820FA788A005365A9 /* AppDelegate.swift */; };
 		16F9F42B20FA788A005365A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F9F42A20FA788A005365A9 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1600E211211740CD00537281 /* MeditationHealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationHealthKit.swift; sourceTree = "<group>"; };
 		1675BFE120FF6242004525A7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		16F9F42520FA788A005365A9 /* Healthkit Meditation Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Healthkit Meditation Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F9F42820FA788A005365A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				16F9F42F20FA788E005365A9 /* Assets.xcassets */,
 				16F9F43420FA788E005365A9 /* Info.plist */,
 				1675BFE120FF6242004525A7 /* UIColorExtension.swift */,
+				1600E211211740CD00537281 /* MeditationHealthKit.swift */,
 			);
 			path = "Healthkit Meditation Demo";
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1600E212211740CD00537281 /* MeditationHealthKit.swift in Sources */,
 				16F9F42B20FA788A005365A9 /* ViewController.swift in Sources */,
 				16F9F42920FA788A005365A9 /* AppDelegate.swift in Sources */,
 				1675BFE220FF6242004525A7 /* UIColorExtension.swift in Sources */,
