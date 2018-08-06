@@ -49,5 +49,32 @@ class MeditationHealthKit {
         }
     }
     
+    func saveSession(start: Date, seconds: Double) {
+        
+        let endTime = start.addingTimeInterval(seconds)
+        
+        if let mindfulType = HKObjectType.categoryType(forIdentifier: .mindfulSession) {
+        
+            let mindfullSample = HKCategorySample(type:mindfulType, value: 0, start: start, end: endTime)
+            
+            print("saving session. Time: \(seconds) seconds")
+            self.dataStore?.save(mindfullSample, withCompletion: { (success, error) -> Void in
+                
+                if error != nil {
+                    self.errorDescription = error.debugDescription
+                    print(error.debugDescription)
+                    return
+                }
+                
+                if success {
+                    print("Meditation session has been saved to HealthKit")
+                    
+                } else {
+                    print("Failed to save session to HealthKit")
+                }
+            })
+        }
+    }
+    
 
 }

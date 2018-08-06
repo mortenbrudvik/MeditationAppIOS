@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var timer: Timer! = nil
     var timerState: timerState = .notRunning
     var countdownInSeconds = 0
+    var meditationStartTime: Date?
     
     let meditationHealthKit = MeditationHealthKit()
     
@@ -173,6 +174,7 @@ extension ViewController: CountDownClock {
     
     func startCountdown() {
         print("start Countdown")
+        meditationStartTime = Date()
         timerState = .running
         countdownInSeconds = meditationTimeInSeconds
         startButton.setTitle("Pause", for: .normal)
@@ -197,6 +199,7 @@ extension ViewController: CountDownClock {
     func triggerAlarm() {
         print("trigger alarm")
         
+        meditationHealthKit.saveSession(start: meditationStartTime!, seconds: Double(meditationTimeInSeconds))
         timerState = .notRunning
         stopTimer()
         startButton.setTitle("Start", for: .normal)
