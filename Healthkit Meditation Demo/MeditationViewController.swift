@@ -14,7 +14,7 @@ enum timerState {
     case notRunning, running, paused
 }
 
-class ViewController: UIViewController {
+class MeditationViewController: UIViewController {
     
     var minutes: [Int] = []
     var timer: Timer! = nil
@@ -154,7 +154,7 @@ class ViewController: UIViewController {
 
 // MARK: Meditation Timer
 
-extension ViewController: CountDownClock {
+extension MeditationViewController: CountDownClock {
 
     @objc func buttonAction(_ sender: UIButton) {
         print("Meditation timer button clicked")
@@ -175,6 +175,7 @@ extension ViewController: CountDownClock {
     func startCountdown() {
         print("start Countdown")
         meditationStartTime = Date()
+        self.tabBarController?.tabBar.isHidden = true
         timerState = .running
         countdownInSeconds = meditationTimeInSeconds
         startButton.setTitle("Pause", for: .normal)
@@ -200,6 +201,7 @@ extension ViewController: CountDownClock {
         print("trigger alarm")
         
         meditationHealthKit.saveSession(start: meditationStartTime!, seconds: Double(meditationTimeInSeconds))
+        self.tabBarController?.tabBar.isHidden = false
         timerState = .notRunning
         stopTimer()
         startButton.setTitle("Start", for: .normal)
@@ -213,7 +215,7 @@ extension ViewController: CountDownClock {
     }
 
     func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(MeditationViewController.updateTimer)), userInfo: nil, repeats: true)
     }
     
     func stopTimer() {
@@ -241,7 +243,7 @@ extension ViewController: CountDownClock {
 
 
 // MARK: Time Selection (PickerView)
-extension ViewController :  UIPickerViewDelegate, UIPickerViewDataSource {
+extension MeditationViewController :  UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
