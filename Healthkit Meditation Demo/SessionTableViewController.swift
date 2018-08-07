@@ -55,8 +55,8 @@ class SessionTableViewController: UITableViewController {
         return cell
     }
     
-    func formatDate(_ with: Date) -> String {
-        let date : Date = Date()
+    func formatDate(_ date: Date) -> String {
+
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, yyyy HH:mm"
         return dateFormatter.string(from: date)
