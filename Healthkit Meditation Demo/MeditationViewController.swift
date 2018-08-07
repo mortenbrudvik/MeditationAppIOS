@@ -94,7 +94,7 @@ class MeditationViewController: UIViewController {
         mainView.addSubview(headerView)
         headerView.snp.makeConstraints {(make) in
             make.top.left.right.equalTo(self.mainView)
-            make.height.equalTo(68)
+            make.height.equalTo(72)
         }
         
         let titleLabel = UILabel()

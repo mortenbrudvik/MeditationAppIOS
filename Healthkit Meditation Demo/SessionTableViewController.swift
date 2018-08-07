@@ -30,9 +30,26 @@ class SessionTableViewController: UITableViewController {
         
         meditationHealthKit.loadData()
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x:0, y:0, width:tableView.frame.size.width, height:18))
+        let label = UILabel(frame: CGRect(x:0, y:0, width:tableView.frame.size.width, height:18))
+        label.text = "Sessions";
+        label.textColor = .flatWhite
+        view.addSubview(label);
+        view.backgroundColor = .flatMint;
+        
+        label.snp.makeConstraints{(make) in
+            make.centerX.equalTo(view)
+        }
+        return view
+    }
 
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 28;
+    }
+    
     // MARK: - Table view data source
-
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(meditationSamples.count)
@@ -40,7 +57,6 @@ class SessionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = UITableViewCell()
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "MyTestCell")
         let startDate = meditationSamples[indexPath.row].startDate
         let endDate = meditationSamples[indexPath.row].endDate
@@ -61,5 +77,5 @@ class SessionTableViewController: UITableViewController {
         dateFormatter.dateFormat = "MMM d, yyyy HH:mm"
         return dateFormatter.string(from: date)
     }
-    
 }
+
