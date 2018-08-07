@@ -19,6 +19,8 @@ class MeditationHealthKit {
     var isAuthorized = false
     var errorDescription = ""
     
+    var onDataLoaded: ((_ result: [HKSample]) -> ())?
+    
     init() {
         dataStore = HKHealthStore()
         
@@ -76,5 +78,24 @@ class MeditationHealthKit {
         }
     }
     
+    func loadData() {
+        let mindfulType = HKObjectType.categoryType(forIdentifier: .mindfulSession)
+        
+        let query = HKAnchoredObjectQuery(type: mindfulType!, predicate: nil, anchor: nil, limit: HKObjectQueryNoLimit) {
+            (query, samplesOrNil, deletedObjectsOrNil, newAnchor, errorOrNil) in
+            
+            if let samples = samplesOrNil {
+                print("Retrieving mindfulness samples")
+                
+                self.onDataLoaded?(samples)
+            }
+            else {
+                print("No heart rate sample available.")
+            }
+            
+        }
+    
+        dataStore?.execute(query)
+    }
 
 }
