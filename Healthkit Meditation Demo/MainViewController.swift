@@ -26,7 +26,7 @@ class MainViewController: UITabBarController {
         for tabBarItem in tabBar.items!
         {
             tabBarItem.title = ""
-            tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+            tabBarItem.imageInsets = UIEdgeInsets.init(top: 6, left: 0, bottom: -6, right: 0)
         }
     }
 

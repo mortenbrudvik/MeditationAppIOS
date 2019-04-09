@@ -61,7 +61,7 @@ class MeditationViewController: UIViewController {
         button.clipsToBounds = true
         button.backgroundColor = .flatMintDark
         button.setTitle("Start", for: .normal)
-        button.contentEdgeInsets = UIEdgeInsetsMake(7,22,7,22)
+        button.contentEdgeInsets = UIEdgeInsets.init(top: 7,left: 22,bottom: 7,right: 22)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         button.titleLabel?.textColor = .flatWhite
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
