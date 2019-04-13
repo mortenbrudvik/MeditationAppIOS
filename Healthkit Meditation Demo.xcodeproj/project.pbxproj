@@ -10,6 +10,13 @@
 		1600E212211740CD00537281 /* MeditationHealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600E211211740CD00537281 /* MeditationHealthKit.swift */; };
 		1600E2142118DDD400537281 /* SessionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600E2132118DDD400537281 /* SessionTableViewController.swift */; };
 		1600E2162118E1A600537281 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600E2152118E1A600537281 /* MainViewController.swift */; };
+		166B746F2261B7E300BFA396 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 166B746D2261B7E300BFA396 /* Interface.storyboard */; };
+		166B74712261B7E500BFA396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 166B74702261B7E500BFA396 /* Assets.xcassets */; };
+		166B74782261B7E500BFA396 /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 166B74772261B7E500BFA396 /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		166B747D2261B7E500BFA396 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166B747C2261B7E500BFA396 /* InterfaceController.swift */; };
+		166B747F2261B7E500BFA396 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166B747E2261B7E500BFA396 /* ExtensionDelegate.swift */; };
+		166B74812261B7E600BFA396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 166B74802261B7E600BFA396 /* Assets.xcassets */; };
+		166B74852261B7E600BFA396 /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 166B746B2261B7E300BFA396 /* Watch.app */; };
 		1675BFE220FF6242004525A7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675BFE120FF6242004525A7 /* UIColorExtension.swift */; };
 		16F9F42920FA788A005365A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F9F42820FA788A005365A9 /* AppDelegate.swift */; };
 		16F9F42B20FA788A005365A9 /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F9F42A20FA788A005365A9 /* MeditationViewController.swift */; };
@@ -19,10 +26,61 @@
 		5217A6C4379BA0F25C081A76 /* Pods_Healthkit_Meditation_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86704FD78B9948289F6C5F3D /* Pods_Healthkit_Meditation_Demo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		166B74792261B7E500BFA396 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16F9F41D20FA788A005365A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 166B74762261B7E500BFA396;
+			remoteInfo = "Watch Extension";
+		};
+		166B74832261B7E600BFA396 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16F9F41D20FA788A005365A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 166B746A2261B7E300BFA396;
+			remoteInfo = Watch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		166B748B2261B7E600BFA396 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				166B74782261B7E500BFA396 /* Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		166B748D2261B7E600BFA396 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				166B74852261B7E600BFA396 /* Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1600E211211740CD00537281 /* MeditationHealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationHealthKit.swift; sourceTree = "<group>"; };
 		1600E2132118DDD400537281 /* SessionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewController.swift; sourceTree = "<group>"; };
 		1600E2152118E1A600537281 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		166B746B2261B7E300BFA396 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		166B746E2261B7E300BFA396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		166B74702261B7E500BFA396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		166B74722261B7E500BFA396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		166B74772261B7E500BFA396 /* Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		166B747C2261B7E500BFA396 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		166B747E2261B7E500BFA396 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		166B74802261B7E600BFA396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		166B74822261B7E600BFA396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1675BFE120FF6242004525A7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		16F9F42520FA788A005365A9 /* Healthkit Meditation Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Healthkit Meditation Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F9F42820FA788A005365A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +96,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		166B74742261B7E500BFA396 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		16F9F42220FA788A005365A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,10 +115,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		166B746C2261B7E300BFA396 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				166B746D2261B7E300BFA396 /* Interface.storyboard */,
+				166B74702261B7E500BFA396 /* Assets.xcassets */,
+				166B74722261B7E500BFA396 /* Info.plist */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		166B747B2261B7E500BFA396 /* Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				166B747C2261B7E500BFA396 /* InterfaceController.swift */,
+				166B747E2261B7E500BFA396 /* ExtensionDelegate.swift */,
+				166B74802261B7E600BFA396 /* Assets.xcassets */,
+				166B74822261B7E600BFA396 /* Info.plist */,
+			);
+			path = "Watch Extension";
+			sourceTree = "<group>";
+		};
 		16F9F41C20FA788A005365A9 = {
 			isa = PBXGroup;
 			children = (
 				16F9F42720FA788A005365A9 /* Healthkit Meditation Demo */,
+				166B746C2261B7E300BFA396 /* Watch */,
+				166B747B2261B7E500BFA396 /* Watch Extension */,
 				16F9F42620FA788A005365A9 /* Products */,
 				16F9F43B20FA78B5005365A9 /* Frameworks */,
 				B3BA99C90EEECFCE508844B2 /* Pods */,
@@ -64,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				16F9F42520FA788A005365A9 /* Healthkit Meditation Demo.app */,
+				166B746B2261B7E300BFA396 /* Watch.app */,
+				166B74772261B7E500BFA396 /* Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +196,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		166B746A2261B7E300BFA396 /* Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 166B748C2261B7E600BFA396 /* Build configuration list for PBXNativeTarget "Watch" */;
+			buildPhases = (
+				166B74692261B7E300BFA396 /* Resources */,
+				166B748B2261B7E600BFA396 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				166B747A2261B7E500BFA396 /* PBXTargetDependency */,
+			);
+			name = Watch;
+			productName = Watch;
+			productReference = 166B746B2261B7E300BFA396 /* Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		166B74762261B7E500BFA396 /* Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 166B748A2261B7E600BFA396 /* Build configuration list for PBXNativeTarget "Watch Extension" */;
+			buildPhases = (
+				166B74732261B7E500BFA396 /* Sources */,
+				166B74742261B7E500BFA396 /* Frameworks */,
+				166B74752261B7E500BFA396 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Watch Extension";
+			productName = "Watch Extension";
+			productReference = 166B74772261B7E500BFA396 /* Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		16F9F42420FA788A005365A9 /* Healthkit Meditation Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16F9F43720FA788E005365A9 /* Build configuration list for PBXNativeTarget "Healthkit Meditation Demo" */;
@@ -115,10 +239,12 @@
 				16F9F42220FA788A005365A9 /* Frameworks */,
 				16F9F42320FA788A005365A9 /* Resources */,
 				54F4E296253BA33CFB6E4146 /* [CP] Embed Pods Frameworks */,
+				166B748D2261B7E600BFA396 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				166B74842261B7E600BFA396 /* PBXTargetDependency */,
 			);
 			name = "Healthkit Meditation Demo";
 			productName = "Healthkit Meditation Demo";
@@ -131,10 +257,16 @@
 		16F9F41D20FA788A005365A9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Morten Brudvik";
 				TargetAttributes = {
+					166B746A2261B7E300BFA396 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					166B74762261B7E500BFA396 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					16F9F42420FA788A005365A9 = {
 						CreatedOnToolsVersion = 9.4;
 						LastSwiftMigration = 1020;
@@ -163,11 +295,30 @@
 			projectRoot = "";
 			targets = (
 				16F9F42420FA788A005365A9 /* Healthkit Meditation Demo */,
+				166B746A2261B7E300BFA396 /* Watch */,
+				166B74762261B7E500BFA396 /* Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		166B74692261B7E300BFA396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				166B74712261B7E500BFA396 /* Assets.xcassets in Resources */,
+				166B746F2261B7E300BFA396 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		166B74752261B7E500BFA396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				166B74812261B7E600BFA396 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		16F9F42320FA788A005365A9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -221,6 +372,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		166B74732261B7E500BFA396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				166B747F2261B7E500BFA396 /* ExtensionDelegate.swift in Sources */,
+				166B747D2261B7E500BFA396 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		16F9F42120FA788A005365A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,7 +396,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		166B747A2261B7E500BFA396 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 166B74762261B7E500BFA396 /* Watch Extension */;
+			targetProxy = 166B74792261B7E500BFA396 /* PBXContainerItemProxy */;
+		};
+		166B74842261B7E600BFA396 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 166B746A2261B7E300BFA396 /* Watch */;
+			targetProxy = 166B74832261B7E600BFA396 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		166B746D2261B7E300BFA396 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				166B746E2261B7E300BFA396 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		16F9F42C20FA788A005365A9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -248,6 +429,94 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		166B74862261B7E600BFA396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GS65HFAFH;
+				IBSC_MODULE = Watch_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brudvik.healthkit.meditation.demo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		166B74872261B7E600BFA396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GS65HFAFH;
+				IBSC_MODULE = Watch_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brudvik.healthkit.meditation.demo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		166B74882261B7E600BFA396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brudvik.healthkit.meditation.demo.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		166B74892261B7E600BFA396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brudvik.healthkit.meditation.demo.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
 		16F9F43520FA788E005365A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -411,6 +680,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		166B748A2261B7E600BFA396 /* Build configuration list for PBXNativeTarget "Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				166B74882261B7E600BFA396 /* Debug */,
+				166B74892261B7E600BFA396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		166B748C2261B7E600BFA396 /* Build configuration list for PBXNativeTarget "Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				166B74862261B7E600BFA396 /* Debug */,
+				166B74872261B7E600BFA396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		16F9F42020FA788A005365A9 /* Build configuration list for PBXProject "Healthkit Meditation Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
