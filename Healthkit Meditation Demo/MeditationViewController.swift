@@ -50,8 +50,7 @@ class MeditationViewController: UIViewController {
         let label = UILabel()
         label.text = "01:00"
         label.textColor = .flatBlack
-        label.font = UIFont(name: "Courier",
-                            size: 54.0)
+        label.font = UIFont(name: "Courier", size: 54.0)
         return label
     }()
     

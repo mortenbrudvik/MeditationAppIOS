@@ -12,10 +12,24 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet weak var timePicker: WKInterfacePicker!
+    
+    var minutes: [Int] = []
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
+        minutes.append(contentsOf: (1...60).map{$0})
+        
+        var pickerItems: [WKPickerItem] = []
+        
+        minutes.forEach{
+            let pickerItem = WKPickerItem()
+            pickerItem.title = "\($0) \($0 == 1 ? "min" : "mins")"
+            pickerItems.append(pickerItem)
+        }
+        
+        timePicker.setItems(pickerItems)
     }
     
     override func willActivate() {
