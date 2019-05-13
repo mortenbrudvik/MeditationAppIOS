@@ -14,14 +14,25 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
                     <items>
-                        <picker height="100" alignment="left" id="jgI-SV-k3P"/>
-                        <button width="1" alignment="left" title="Button" id="Z2j-aE-XYI"/>
+                        <picker height="100" alignment="center" id="jgI-SV-k3P"/>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Start" id="Z2j-aE-XYI">
+                            <connections>
+                                <segue destination="bud-Ux-mLd" kind="push" id="Ayi-sQ-ksF"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="timePicker" destination="jgI-SV-k3P" id="0HP-go-i3m"/>
                     </connections>
                 </controller>
             </objects>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="THT-b6-euo">
+            <objects>
+                <controller id="bud-Ux-mLd"/>
+            </objects>
+            <point key="canvasLocation" x="406" y="30"/>
         </scene>
     </scenes>
 </document>
