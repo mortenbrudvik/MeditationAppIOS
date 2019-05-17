@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Start Page-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" userLabel="Start Page" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
                     <items>
                         <picker height="100" alignment="center" id="jgI-SV-k3P"/>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Start" id="Z2j-aE-XYI">
@@ -27,10 +27,29 @@
                 </controller>
             </objects>
         </scene>
-        <!--Interface Controller-->
+        <!--Count Down Page-->
         <scene sceneID="THT-b6-euo">
             <objects>
-                <controller id="bud-Ux-mLd"/>
+                <controller id="bud-Ux-mLd" userLabel="Count Down Page" customClass="CountDownController" customModule="Watch" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="100" alignment="left" id="r2g-BY-6ba">
+                            <items>
+                                <timer alignment="center" verticalAlignment="center" enabled="YES" previewedSeconds="60" id="oI8-E1-xiC">
+                                    <fontDescription key="font" type="boldSystem" pointSize="33"/>
+                                    <calendarUnit key="units" minute="YES" second="YES"/>
+                                </timer>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="bBq-iM-y73">
+                            <items>
+                                <button width="1" alignment="left" title="Pause" id="aL4-YT-KSe"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="timer" destination="oI8-E1-xiC" id="mfu-8C-H0Y"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="406" y="30"/>
         </scene>

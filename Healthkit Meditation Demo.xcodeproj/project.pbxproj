@@ -10,6 +10,7 @@
 		1600E212211740CD00537281 /* MeditationHealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600E211211740CD00537281 /* MeditationHealthKit.swift */; };
 		1600E2142118DDD400537281 /* SessionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600E2132118DDD400537281 /* SessionTableViewController.swift */; };
 		1600E2162118E1A600537281 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600E2152118E1A600537281 /* MainViewController.swift */; };
+		1664FE6C228B43AC00E2BCBA /* CountDownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664FE6B228B43AC00E2BCBA /* CountDownController.swift */; };
 		166B746F2261B7E300BFA396 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 166B746D2261B7E300BFA396 /* Interface.storyboard */; };
 		166B74712261B7E500BFA396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 166B74702261B7E500BFA396 /* Assets.xcassets */; };
 		166B74782261B7E500BFA396 /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 166B74772261B7E500BFA396 /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -71,6 +72,7 @@
 		1600E211211740CD00537281 /* MeditationHealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationHealthKit.swift; sourceTree = "<group>"; };
 		1600E2132118DDD400537281 /* SessionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewController.swift; sourceTree = "<group>"; };
 		1600E2152118E1A600537281 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1664FE6B228B43AC00E2BCBA /* CountDownController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownController.swift; sourceTree = "<group>"; };
 		166B746B2261B7E300BFA396 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		166B746E2261B7E300BFA396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		166B74702261B7E500BFA396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				166B747E2261B7E500BFA396 /* ExtensionDelegate.swift */,
 				166B74802261B7E600BFA396 /* Assets.xcassets */,
 				166B74822261B7E600BFA396 /* Info.plist */,
+				1664FE6B228B43AC00E2BCBA /* CountDownController.swift */,
 			);
 			path = "Watch Extension";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				TargetAttributes = {
 					166B746A2261B7E300BFA396 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 					166B74762261B7E500BFA396 = {
 						CreatedOnToolsVersion = 10.2;
@@ -374,6 +378,7 @@
 			files = (
 				166B747F2261B7E500BFA396 /* ExtensionDelegate.swift in Sources */,
 				166B747D2261B7E500BFA396 /* InterfaceController.swift in Sources */,
+				1664FE6C228B43AC00E2BCBA /* CountDownController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,17 +427,25 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GS65HFAFH;
 				IBSC_MODULE = Watch_Extension;
 				INFOPLIST_FILE = Watch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brudvik.healthkit.meditation.demo.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Watch Extension/Watch-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.2;
@@ -444,16 +457,23 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3GS65HFAFH;
 				IBSC_MODULE = Watch_Extension;
 				INFOPLIST_FILE = Watch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brudvik.healthkit.meditation.demo.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Watch Extension/Watch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.2;
