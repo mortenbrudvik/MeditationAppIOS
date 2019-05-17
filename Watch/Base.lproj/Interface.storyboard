@@ -14,7 +14,11 @@
             <objects>
                 <controller id="AgC-eL-Hgc" userLabel="Start Page" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
                     <items>
-                        <picker height="100" alignment="center" id="jgI-SV-k3P"/>
+                        <picker height="100" alignment="center" id="jgI-SV-k3P">
+                            <connections>
+                                <action selector="pickerChanged:" destination="AgC-eL-Hgc" id="k7f-GV-v44"/>
+                            </connections>
+                        </picker>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Start" id="Z2j-aE-XYI">
                             <connections>
                                 <segue destination="bud-Ux-mLd" kind="push" id="Ayi-sQ-ksF"/>

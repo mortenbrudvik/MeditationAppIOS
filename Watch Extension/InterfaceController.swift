@@ -16,6 +16,13 @@ class InterfaceController: WKInterfaceController {
     
     var minutes: [Int] = []
     
+    var meditationInMinutes = 1
+    
+    @IBAction func pickerChanged(_ value: Int) {
+        meditationInMinutes = value + 1
+        print("time: \(meditationInMinutes) min")
+    }
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -30,6 +37,13 @@ class InterfaceController: WKInterfaceController {
         }
         
         timePicker.setItems(pickerItems)
+    }
+    
+
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
+        
+        return meditationInMinutes
     }
     
     override func willActivate() {

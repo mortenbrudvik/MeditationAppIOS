@@ -16,6 +16,15 @@ class CountDownController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        if let time: Int = context as? Int {
+            seconds = Double(time) * 60.0
+            print("time recieved: \(time)" )
+        } else {
+            seconds = 60.0
+        }
+        
+        
     }
     
     override func willActivate() {
