@@ -46,11 +46,16 @@
                         </group>
                         <group width="1" alignment="left" id="bBq-iM-y73">
                             <items>
-                                <button width="1" alignment="left" title="Pause" id="aL4-YT-KSe"/>
+                                <button width="1" alignment="left" title="Pause" id="aL4-YT-KSe">
+                                    <connections>
+                                        <action selector="pauseTimer" destination="bud-Ux-mLd" id="Ip5-Di-cus"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="pauseButton" destination="aL4-YT-KSe" id="4NT-lT-Lul"/>
                         <outlet property="timer" destination="oI8-E1-xiC" id="mfu-8C-H0Y"/>
                     </connections>
                 </controller>
