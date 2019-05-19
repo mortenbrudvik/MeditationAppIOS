@@ -10,13 +10,13 @@ import WatchKit
 
 class CountDownController: WKInterfaceController {
 
-    var myTimer : Timer?
+    var timer : Timer?
     var isPaused = false
     var elapsedTime : TimeInterval = 0.0
     var startTime = NSDate()
     var duration : TimeInterval = 60.0
 
-    @IBOutlet weak var timer: WKInterfaceTimer!
+    @IBOutlet weak var interfaceTimer: WKInterfaceTimer!
     @IBOutlet weak var pauseButton: WKInterfaceButton!
     
     override func awake(withContext context: Any?) {
@@ -29,39 +29,46 @@ class CountDownController: WKInterfaceController {
             duration = 60.0
         }
     }
-    
-    func playAlert() {
-        let device = WKInterfaceDevice.current()
-        device.play(.notification)
-    }
-    
     override func willActivate() {
         super.willActivate()
-        myTimer = Timer.scheduledTimer(timeInterval: duration, target: self, selector: Selector(("timerDone")), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: duration, target: self, selector: Selector(("timerDone")), userInfo: nil, repeats: false)
         
-        timer.setDate(Date(timeIntervalSinceNow: duration))
-        timer.start()
+        interfaceTimer.setDate(Date(timeIntervalSinceNow: duration))
+        interfaceTimer.start()
+    }
+    
+    override func willDisappear() {
+        super.willDisappear()
+        
+        timer!.invalidate()
+        timer = nil
     }
     
     @IBAction func pauseTimer() {
         if isPaused {
             isPaused = false
-            myTimer = Timer.scheduledTimer(timeInterval: duration - elapsedTime, target: self, selector: Selector(("timerDone")), userInfo: nil, repeats: false)
-            timer.setDate(NSDate(timeIntervalSinceNow: duration - elapsedTime) as Date)
-            timer.start()
+            timer = Timer.scheduledTimer(timeInterval: duration - elapsedTime, target: self, selector: #selector(timerDone), userInfo: nil, repeats: false)
+            interfaceTimer.setDate(NSDate(timeIntervalSinceNow: duration - elapsedTime) as Date)
+            interfaceTimer.start()
             startTime = NSDate()
             pauseButton.setTitle("Pause")
         } else {
             isPaused = true
             let paused = NSDate()
             elapsedTime += paused.timeIntervalSince(startTime as Date)
-            timer.stop()
-            myTimer!.invalidate()
+            interfaceTimer.stop()
+            timer!.invalidate()
             pauseButton.setTitle("Continue")
         }
     }
     
-    func timerDone(){
-
+    func playAlert() {
+        let device = WKInterfaceDevice.current()
+        device.play(.notification)
+    }
+    
+    @objc func timerDone(){
+        pauseButton.setHidden(true)
+        playAlert()
     }
 }

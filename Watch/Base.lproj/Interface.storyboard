@@ -55,8 +55,8 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="interfaceTimer" destination="oI8-E1-xiC" id="mfu-8C-H0Y"/>
                         <outlet property="pauseButton" destination="aL4-YT-KSe" id="4NT-lT-Lul"/>
-                        <outlet property="timer" destination="oI8-E1-xiC" id="mfu-8C-H0Y"/>
                     </connections>
                 </controller>
             </objects>
