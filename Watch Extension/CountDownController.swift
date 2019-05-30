@@ -74,5 +74,7 @@ class CountDownController: WKInterfaceController {
         playAlert()
         print("Saving meditation time to HealthKit")
         meditationDataAccess.saveSession(start: meditationStartTime, seconds: Double(duration))
+        
+        pushController(withName: "CompletePage", context: duration)
     }
 }

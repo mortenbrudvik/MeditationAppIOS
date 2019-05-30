@@ -62,5 +62,29 @@
             </objects>
             <point key="canvasLocation" x="406" y="30"/>
         </scene>
+        <!--CompletePage-->
+        <scene sceneID="koo-am-Cro">
+            <objects>
+                <controller identifier="CompletePage" id="Rrq-cS-uR5" customClass="CompleteController" customModule="Watch" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Time" id="88p-hX-qTN"/>
+                        <label alignment="left" text="1 min" id="97v-ne-IOU"/>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="pr6-V7-kOv">
+                            <items>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Done" id="SlY-6S-nnH">
+                                    <connections>
+                                        <action selector="backToMain" destination="Rrq-cS-uR5" id="nke-Ra-TsY"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="timeLabel" destination="97v-ne-IOU" id="qAR-9o-bSE"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="545" y="323"/>
+        </scene>
     </scenes>
 </document>

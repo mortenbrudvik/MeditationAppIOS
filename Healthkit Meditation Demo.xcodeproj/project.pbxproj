@@ -13,6 +13,7 @@
 		1664FE6C228B43AC00E2BCBA /* CountDownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664FE6B228B43AC00E2BCBA /* CountDownController.swift */; };
 		1664FE702294828400E2BCBA /* MeditationHealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600E211211740CD00537281 /* MeditationHealthKit.swift */; };
 		1664FE732294848000E2BCBA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1664FE722294848000E2BCBA /* HealthKit.framework */; };
+		1664FE75229FDBC600E2BCBA /* CompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664FE74229FDBC600E2BCBA /* CompleteController.swift */; };
 		166B746F2261B7E300BFA396 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 166B746D2261B7E300BFA396 /* Interface.storyboard */; };
 		166B74712261B7E500BFA396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 166B74702261B7E500BFA396 /* Assets.xcassets */; };
 		166B74782261B7E500BFA396 /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 166B74772261B7E500BFA396 /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -77,6 +78,7 @@
 		1664FE6B228B43AC00E2BCBA /* CountDownController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownController.swift; sourceTree = "<group>"; };
 		1664FE712294848000E2BCBA /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		1664FE722294848000E2BCBA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		1664FE74229FDBC600E2BCBA /* CompleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteController.swift; sourceTree = "<group>"; };
 		166B746B2261B7E300BFA396 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		166B746E2261B7E300BFA396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		166B74702261B7E500BFA396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				166B74802261B7E600BFA396 /* Assets.xcassets */,
 				166B74822261B7E600BFA396 /* Info.plist */,
 				1664FE6B228B43AC00E2BCBA /* CountDownController.swift */,
+				1664FE74229FDBC600E2BCBA /* CompleteController.swift */,
 			);
 			path = "Watch Extension";
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				1664FE702294828400E2BCBA /* MeditationHealthKit.swift in Sources */,
 				166B747F2261B7E500BFA396 /* ExtensionDelegate.swift in Sources */,
 				166B747D2261B7E500BFA396 /* InterfaceController.swift in Sources */,
+				1664FE75229FDBC600E2BCBA /* CompleteController.swift in Sources */,
 				1664FE6C228B43AC00E2BCBA /* CountDownController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
