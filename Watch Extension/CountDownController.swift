@@ -15,6 +15,8 @@ class CountDownController: WKInterfaceController {
     var elapsedTime : TimeInterval = 0.0
     var startTime = NSDate()
     var duration : TimeInterval = 60.0
+    let meditationDataAccess = MeditationHealthKit()
+    let meditationStartTime = Date()
 
     @IBOutlet weak var interfaceTimer: WKInterfaceTimer!
     @IBOutlet weak var pauseButton: WKInterfaceButton!
@@ -70,5 +72,7 @@ class CountDownController: WKInterfaceController {
     @objc func timerDone(){
         pauseButton.setHidden(true)
         playAlert()
+        print("Saving meditation time to HealthKit")
+        meditationDataAccess.saveSession(start: meditationStartTime, seconds: Double(duration))
     }
 }

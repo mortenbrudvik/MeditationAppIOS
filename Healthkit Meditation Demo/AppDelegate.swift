@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HealthKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.statusBarView?.backgroundColor = .flatMint
         return true
+    }
+    
+    func applicationShouldRequestHealthAuthorization(_ application: UIApplication) {
+        let healthStore = HKHealthStore()
+        healthStore.handleAuthorizationForExtension { (success, error) -> Void in
+            //...
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

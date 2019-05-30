@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import HealthKit
 import Foundation
 
 
@@ -17,6 +18,8 @@ class InterfaceController: WKInterfaceController {
     var minutes: [Int] = []
     
     var meditationInMinutes = 1
+    
+    let meditationDataAccess = MeditationHealthKit()
     
     @IBAction func pickerChanged(_ value: Int) {
         meditationInMinutes = value + 1
@@ -49,6 +52,8 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+    
+        meditationDataAccess.authorize()
     }
     
     override func didDeactivate() {
